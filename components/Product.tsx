@@ -9,7 +9,7 @@ export default function Product({
   discount,
   rating,
 }: Productprop) {
-  const total = (price / 100) * discount;
+  const total = (price-(price / 100) * discount);
   const exprice = price;
 
   return (
