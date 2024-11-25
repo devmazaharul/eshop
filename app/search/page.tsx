@@ -45,7 +45,7 @@ console.log( getQuery)
                     rating={5}
                     desc="hellow world"
                     price={item.price}
-                    discount={5}
+                    discount={50}
                   />
                 </Link>
               ))}
