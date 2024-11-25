@@ -19,6 +19,8 @@ console.log( getQuery)
       return item.name.toLowerCase().includes(`${getQuery}`);
     });
 
+    let id=1
+
   return (
     <div className="md:grid md:grid-cols-6 p-3 gap-4">
       <div className="md:col-span-1">
@@ -38,14 +40,14 @@ console.log( getQuery)
           <div className="grid py-4 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
             {newArr &&
               newArr.map((item:{id:number,name:string,price:number}) => (
-                <Link key={item.id} href={`/detils/${item.id}`}>
+                <Link key={item.id} href={`/product/details/${item.id}/${item.name.split(" ").join("-")}`}>
                   <Product
                     src="/pro2.jpg"
                     title={item.name}
                     rating={5}
                     desc="hellow world"
                     price={item.price}
-                    discount={50}
+                    discount={id++}
                   />
                 </Link>
               ))}

@@ -4,7 +4,7 @@ import Catagorycard from './sub/Catagorycard'
 export default function Catagory() {
   return (
     <div >
-    <div className='w-1/2 mx-auto text-center py-4'>
+    <div className='w-1/1 md:1/2 mx-auto text-center py-4'>
     <h1 className='text-xl font-semibold py-2'>Explore Popular Categories</h1>
     <p>Lorem ipsum dolor sit amet, c.    ex velit?  eid qui animi hic sed quidem ?</p>
     </div>

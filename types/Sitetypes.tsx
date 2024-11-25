@@ -20,5 +20,20 @@ export interface NewArivarProp{
 
 export interface productcartprop{
     name:string
-    getQuery:string
+    id:number
+    price:number
+    city:string
+
+}
+
+
+export interface productDetailsprop extends productcartprop{
+
+    desc:string
+    rating:number
+    brand:string
+    size:string[] | number[]
+    avatar:string
+    discount:number
+    color:string[]
 }
