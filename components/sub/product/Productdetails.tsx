@@ -1,6 +1,7 @@
 import { productDetailsprop } from '@/types/Sitetypes'
 import Image from 'next/image'
 import React from 'react'
+import Addtocart from './Addtocart'
 
 const Productdetails = ({avatar,id,name,desc,price,rating,brand,size,discount,color}:productDetailsprop) => {
   return (
@@ -14,7 +15,7 @@ const Productdetails = ({avatar,id,name,desc,price,rating,brand,size,discount,co
         
           <h1 className='leading-8'>{desc}</h1>
          
-          <p className='text-2xl text-yellow-400 border-b py-3'>{"*".repeat(rating)}</p>
+         <div className='flex items-center gap-4'> <p className='text-2xl text-yellow-400 border-b py-3'>{"*".repeat(rating)} </p>{rating} Start rating</div>
           <div className='flex py-4 items-center gap-3'>
           <p className='text-xl font-semibold '>৳ {price-((price/100)*discount)}</p>
           <p className='text-xl font-semibold line-through text-gray-500'>৳ {price}</p>
@@ -28,7 +29,7 @@ const Productdetails = ({avatar,id,name,desc,price,rating,brand,size,discount,co
           <div className='flex items-center py-3 border-t gap-3 justify-between w-fit text-md'>
             <p className='text-xl font-semibold '>Colors: </p>
           
-            {color.map(color=><p key={id} className={`text-${color||'red'}-500 px-2 rounded-full  `}>{color}</p>)}
+            {color.map(color=><p key={id} className={`text-${color||'red'}-500 capitalize px-2 rounded-full  `}>{color}</p>)}
       
           </div>
           <div className='flex items-center py-3 border-t gap-3 justify-between w-fit text-md'>
@@ -42,6 +43,10 @@ const Productdetails = ({avatar,id,name,desc,price,rating,brand,size,discount,co
           
          <p>{brand}</p>
       
+          </div>
+          <div className='flex items-center gap-8 '>
+            <Addtocart/>
+         <button className=' bg-red-500 text-white px-4 py-2 rounded-md  '>Buy now</button>
           </div>
         </div>
       </div>
