@@ -1,25 +1,24 @@
-"use client";
-import { useSearchParams } from "next/navigation";
 import Filter from "./Filter";
 import Product from "@/components/Product";
 import Link from "next/link";
 import "./search.css";
-import useGetproduct from "@/hook/useGetproduct";
-import { productcartprop } from "@/types/Sitetypes";
-export default function Usepage() {
-  const searchParams = useSearchParams();
-  const getQuery = searchParams.get("q")
+import { productDetailsprop } from "@/types/Sitetypes";
+import { getProductserver } from "@/data/ProductSrc";
 
-console.log( getQuery)
-  const { laoding, err, searchProduct } = useGetproduct(getQuery);
+export default async function Usepage({
+  searchParams
+}: {
+  searchParams: Promise<{ q: string[] | number[] } | undefined>;
+}) {
+  const query = (await searchParams)?.q;
+
+  const searchProduct = await getProductserver();
 
   const newArr =
     searchProduct &&
-    searchProduct.filter((item:productcartprop) => {
-      return item.name.toLowerCase().includes(`${getQuery}`);
+    searchProduct.filter((item: productDetailsprop) => {
+      return item.name.toLowerCase().includes(`${query}`);
     });
-
-    let id=1
 
   return (
     <div className="md:grid md:grid-cols-6 p-3 gap-4">
@@ -28,31 +27,35 @@ console.log( getQuery)
       </div>
 
       <div className="py-4 col-span-5 ">
-        <h1 className="text-xl font-semibold">Search Result {newArr && newArr.length}</h1>
+        <h1 className="text-xl font-semibold">
+          Search Result {newArr && newArr.length}
+        </h1>
 
-        {laoding ? <p className="text-blue-500">Loading...</p> : ""}
+        <p className="text-red-500">
+          {newArr.length == 0 ? "No data found" : ""}
+        </p>
 
-        {err.length > 0 ? (
-          <h1 className="text-xl place-content-center text-center text-red-500 font-extralight">
-            {err && err}
-          </h1>
-        ) : (
-          <div className="grid py-4 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
-            {newArr &&
-              newArr.map((item:{id:number,name:string,price:number}) => (
-                <Link key={item.id} href={`/product/details/${item.id}/${item.name.split(" ").join("-")}`}>
-                  <Product
-                    src="/pro2.jpg"
-                    title={item.name}
-                    rating={5}
-                    desc="hellow world"
-                    price={item.price}
-                    discount={id++}
-                  />
-                </Link>
-              ))}
-          </div>
-        )}
+        <div className="grid py-4 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
+          {newArr &&
+            newArr.map((item: productDetailsprop) => (
+              <Link
+                key={item.id}
+                href={`/product/details/${item.id}/${item.name
+                  .split(" ")
+                  .join("-")}`}
+              >
+                <Product
+                  src="/pro2.jpg"
+                  title={item.name}
+                  desc={item.desc}
+                  discount={item.discount}
+                  price={item.price}
+                  rating={item.rating}
+                  key={item.id}
+                />
+              </Link>
+            ))}
+        </div>
       </div>
     </div>
   );
