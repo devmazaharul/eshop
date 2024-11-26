@@ -2,6 +2,7 @@ import { Productprop } from "@/types/Sitetypes";
 import Image from "next/image";
 import { MdFavoriteBorder } from "react-icons/md";
 import Addtocart from "./sub/product/Addtocart";
+import Link from "next/link";
 
 export default function Product({
   title,
@@ -9,12 +10,15 @@ export default function Product({
   price,
   discount,
   rating,
+  id,
+
 }: Productprop) {
   const total = (price-(price / 100) * discount);
   const exprice = price;
 
   return (
-    <div className=" shadow-lg h-[420px] relative shadow-gray-200 rounded-md ">
+<div className=" shadow-lg h-[420px] relative shadow-gray-200 rounded-md ">
+<Link key={id} href={`/product/details/${id}/${title.split(" ").join("-")}`}>
       <p className="bg-violet-700 px-4  top-6 relative  rounded-sm text-gray-100 font-semibold w-fit">
         {discount}% OFF
       </p>
@@ -39,10 +43,15 @@ export default function Product({
             <MdFavoriteBorder />
           </div>
         </div>
-        <div className="text-center my-4">
-         <Addtocart/>
-        </div>
+       
       </div>
-    </div>
+    </Link>
+
+<div className="text-center my-4">
+<Addtocart/>
+</div>
+</div>
+
+
   );
 }

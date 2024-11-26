@@ -10,6 +10,7 @@ export interface Productprop {
   price: number;
   discount: number;
   desc: string;
+  id:number
 }
 
 export interface NewArivarProp extends productDetailsprop {

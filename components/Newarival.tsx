@@ -18,7 +18,7 @@ export default async function Newarival() {
           {data &&
             data.map((item:NewArivarProp) => {
               return (
-                <Link key={item.id} href={`/product/details/${item.id}/${item.name.split(" ").join("-")}`}>
+              
                   <Product
                     src="/pro2.jpg"
                     title={item.name}
@@ -26,8 +26,10 @@ export default async function Newarival() {
                     desc={item.desc}
                     price={item.price}
                     discount={item.discount}
+                    id={item.id}
+                    key={item.id}
                   />
-                </Link>
+          
               );
             })}
         </div>

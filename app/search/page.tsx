@@ -38,22 +38,17 @@ export default async function Usepage({
         <div className="grid py-4 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
           {newArr &&
             newArr.map((item: productDetailsprop) => (
-              <Link
-                key={item.id}
-                href={`/product/details/${item.id}/${item.name
-                  .split(" ")
-                  .join("-")}`}
-              >
-                <Product
-                  src="/pro2.jpg"
-                  title={item.name}
-                  desc={item.desc}
-                  discount={item.discount}
-                  price={item.price}
-                  rating={item.rating}
-                  key={item.id}
-                />
-              </Link>
+             
+              <Product
+              src="/pro2.jpg"
+              title={item.name}
+              rating={item.rating}
+              desc={item.desc}
+              price={item.price}
+              discount={item.discount}
+              id={item.id}
+              key={item.id}
+            />
             ))}
         </div>
       </div>
