@@ -19,7 +19,7 @@ export default async function Page({ params }: params) {
     }
   });
 
-  let banglatext =
+  const banglatext =
     "সকলের ব্যবহারের জন্য উন্মুক্ত অত্যন্ত ফাস্ট, লাইট-ওয়েট এবং ফ্রি বাংলা ANSI ও Unicode কিবোর্ড। চিত্রলিপি. বিভিন্ন ধরনের টাইপোগ্রাফি, ব্যানার, পোস্টার ইত্যাদি ডিজাইন সামগ্রী যা আপনার কাজকে করে লিপিঘর কিবোর্ড";
   return (
     <>

@@ -15,7 +15,7 @@ const Productdetails = ({avatar,id,name,desc,price,rating,brand,size,discount,co
         
           <h1 className='leading-8'>{desc}</h1>
          
-         <div className='flex items-center gap-4'> <p className='text-2xl text-yellow-400 border-b py-3'>{"*".repeat(rating)} </p>{rating} Start rating</div>
+         <div className='flex items-center gap-4 border-b w-full '> <p className='text-2xl text-yellow-400 py-3'>{"*".repeat(rating)} </p>{rating} Start rating</div>
           <div className='flex py-4 items-center gap-3'>
           <p className='text-xl font-semibold '>৳ {price-((price/100)*discount)}</p>
           <p className='text-xl font-semibold line-through text-gray-500'>৳ {price}</p>
@@ -26,19 +26,19 @@ const Productdetails = ({avatar,id,name,desc,price,rating,brand,size,discount,co
             <p>  Up to 6 months, as low as ৳ 1,890 per month.</p>
           </div>
 
-          <div className='flex items-center py-3 border-t gap-3 justify-between w-fit text-md'>
+          <div className='flex items-center py-3  gap-3 justify-between w-fit text-md'>
             <p className='text-xl font-semibold '>Colors: </p>
           
             {color.map(color=><p key={id} className={`text-${color||'red'}-500 capitalize px-2 rounded-full  `}>{color}</p>)}
       
           </div>
-          <div className='flex items-center py-3 border-t gap-3 justify-between w-fit text-md'>
+          <div className='flex items-center py-3  gap-3 justify-between w-fit text-md'>
             <p className='text-xl font-semibold '>Size : : </p>
           
          <p>{size.join("-")}</p>
       
           </div>
-          <div className='flex items-center py-3 border-t gap-3 justify-between w-fit text-md'>
+          <div className='flex items-center py-3  gap-3 justify-between w-fit text-md'>
             <p className='text-xl font-semibold '>Brand : : </p>
           
          <p>{brand}</p>
