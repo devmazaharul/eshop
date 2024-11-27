@@ -1,6 +1,5 @@
 import Filter from "./Filter";
 import Product from "@/components/Product";
-import Link from "next/link";
 import "./search.css";
 import { productDetailsprop } from "@/types/Sitetypes";
 import { getProductserver } from "@/data/ProductSrc";

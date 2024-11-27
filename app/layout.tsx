@@ -1,4 +1,4 @@
-import {Space_Grotesk,Titillium_Web} from "next/font/google"
+import {Titillium_Web} from "next/font/google"
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
