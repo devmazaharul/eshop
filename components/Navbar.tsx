@@ -24,18 +24,19 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="flex text-2xl items-center gap-3 md:gap-8">
+      <div className="flex  items-center gap-3 md:gap-8">
         <Link className="hidden md:flex items-center" href={"/favorite"}>
-          <MdFavoriteBorder />
+          <MdFavoriteBorder className="text-2xl" />
         </Link>
         <Link className="flex  items-center" href={"/users"}>
-          <FaRegUser />
+          <FaRegUser className="text-2xl" />
         </Link>
 
         <div>
           <Chartbutton />
         </div>
       </div>
+      
     </div>
   );
 }
