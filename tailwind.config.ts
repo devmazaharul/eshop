@@ -9,8 +9,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        lama:"#F35C7A"
-      }
+        lama: "#F35C7A",
+      },
     },
   },
   plugins: [],
