@@ -1,9 +1,9 @@
-import { FiShoppingCart } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
 import { MdFavoriteBorder } from "react-icons/md";
 import Link from "next/link";
 import Searchbar from "./sub/Searchbar";
 import Mobilesearch from "./sub/Mobilesearch";
+import Chartbutton from "./Chartbutton";
 
 
 export default function Navbar() {
@@ -30,12 +30,13 @@ export default function Navbar() {
         <MdFavoriteBorder/>
         </Link>
         <Link className="flex  items-center" href={'/users'}>
-        <FaRegUser/>
+        <FaRegUser />
         </Link>
-        <Link className="flex  items-center" href={'/cart'}>
-        <FiShoppingCart/>
-        <sup className="bg-red-400 text-white p-2 rounded-full">1</sup>
-        </Link>
+
+        <div>
+          <Chartbutton/>
+        </div>
+
       </div>
     </div>
   )

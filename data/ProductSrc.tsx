@@ -18,6 +18,8 @@ export const getProductserver=async()=>{
                 }
            })
 
+        }else{
+            console.log("Connection error")
         }
 
     } catch (error) {

@@ -5,7 +5,7 @@ const Addtocart = () => {
   }
   return (
     <>
-      <button onClick={handleClick} className="bg-gray-700 hover:bg-gray-600  text-gray-200 px-4 py-1 rounded-sm">Add to cart</button>
+      <button onClick={handleClick} className="border border-gray-300  rounded-full hover:bg-gray-600  hover:text-white text-gray-800 px-4 py-1 ">Add to cart</button>
     </>
   )
 }

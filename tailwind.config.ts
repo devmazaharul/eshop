@@ -9,10 +9,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        site:"green"
-      },
+        lama:"#F35C7A"
+      }
     },
   },
   plugins: [],
