@@ -22,6 +22,7 @@ export const getProductserver = async () => {
       console.log("Connection error");
     }
   } catch (error) {
+    console.log("Connection error")
     return "server error";
   }
 };
