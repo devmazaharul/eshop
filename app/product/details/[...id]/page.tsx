@@ -11,11 +11,13 @@ export default async function Page({ params }: Productparams) {
 
   const productInfo = await getProductserver();
 
-  const filterData =productInfo&& productInfo.filter((item: productcartprop) => {
-    if (item.id === slug?.id[0]) {
-      return item;
-    }
-  });
+  const filterData =
+    productInfo &&
+    productInfo.filter((item: productcartprop) => {
+      if (item.id === slug?.id[0]) {
+        return item;
+      }
+    });
 
   return (
     <>

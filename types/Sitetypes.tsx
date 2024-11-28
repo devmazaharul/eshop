@@ -10,7 +10,7 @@ export interface Productprop {
   price: number;
   discount: number;
   desc: string;
-  id:number
+  id: number;
 }
 
 export interface NewArivarProp extends productDetailsprop {
@@ -18,7 +18,6 @@ export interface NewArivarProp extends productDetailsprop {
   id: number;
   price: number;
 }
-
 export interface productcartprop {
   name: string;
   id: number;
@@ -31,7 +30,6 @@ export interface productDetailsprop extends productcartprop {
   rating: number;
   brand: string;
   size: string[] | number[];
-
   discount: number;
   color: string[];
 }

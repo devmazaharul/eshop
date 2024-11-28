@@ -1,10 +1,14 @@
-import {Titillium_Web} from "next/font/google"
+import { Titillium_Web } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { getProductserver } from "@/data/ProductSrc";
 
-const siteFont=Titillium_Web({weight:"400",style:"normal",subsets:["latin"]})
+const siteFont = Titillium_Web({
+  weight: "400",
+  style: "normal",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Eshop",
@@ -16,23 +20,16 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  await getProductserver()
+  await getProductserver();
   return (
     <html lang="en">
-      <body
-        className={`${siteFont.className} antialiased`}
-      >
-         <div className="md:w-[90%] w-[96%] mx-auto">
-         <div >
-   
-          <Navbar/>
+      <body className={`${siteFont.className} antialiased`}>
+        <div className="md:w-[90%] w-[96%] mx-auto">
+          <div>
+            <Navbar />
+          </div>
+          <div className="md:w-[90%] mx-auto">{children}</div>
         </div>
-        <div className="md:w-[90%] mx-auto">
-       
-        {children}
-        </div>
-         </div>
       </body>
     </html>
   );
