@@ -4,9 +4,6 @@ import Catagorycard from "./sub/Catagorycard";
 export default function Catagory() {
   return (
     <div>
-      <button className="bg-lama px-4 py-2 rounded-md text-white">
-        Login{" "}
-      </button>
       <div className="w-1/1 md:1/2 mx-auto text-center py-4">
         <h1 className="text-xl font-semibold py-2">
           Explore Popular Categories
