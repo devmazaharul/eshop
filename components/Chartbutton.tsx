@@ -14,7 +14,7 @@ const Chartbutton = () => {
     <>
       <div className="relative ">
         <button onClick={handleClick} className="flex  items-center">
-          <FiShoppingCart className="text-2xl"/>
+          <FiShoppingCart  className={`${show?"text-red-500":''} text-2xl`}/>
           <sup className="bg-red-400  text-white p-2 rounded-full">3</sup>
         </button>
         {show ? (

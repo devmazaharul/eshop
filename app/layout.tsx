@@ -1,10 +1,10 @@
-import { Titillium_Web } from "next/font/google";
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { getProductserver } from "@/data/ProductSrc";
 
-const siteFont = Titillium_Web({
+const siteFont = Inter({
   weight: "400",
   style: "normal",
   subsets: ["latin"],

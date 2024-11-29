@@ -32,21 +32,47 @@ const [imageIndex, setimageIndex] = useState(0)
     <div className=' py-6'>
       <div className='md:grid mt-7 grid-cols-4  gap-8  p-4 '>
         <div className='col-span-2'>
-          <Image className='h-[400px] hover:object-fill hover:w-full hover:h-full ease-in duration-300 w-[400px] rounded-lg object-cover shadow-lg' src={imageArr[imageIndex].url} width={1000} height={950} alt='product images'/>
-            <div className='flex items-center gap-2 my-6'>
-    {imageArr.map((img,i)=>{
+        <div className='md:hidden'>
+          <div >
+          <Image className='h-[400px] ease-in duration-300 w-[400px] rounded-lg object-cover shadow-lg' src={imageArr[imageIndex].url} width={1000} height={950} alt='product images'/>
+          </div>
+          <div className='flex items-center gap-2'>
+          {imageArr.map((img,i)=>{
       if(i==imageIndex){
         return (
         <div key={img.id} className='py-5'>
-            <Image    className='w-[200px] rounded-md shadow-xl h-[200px] object-fill' onClick={()=>setimageIndex(i)} width={200} height={140} alt='slide img' src={img.url}/>
-              <h1 className='text-md py-2 text-center text-pink-500'>Current</h1>
+            <Image    className='w-[150px] rounded-md  shadow-xl border-b-2 border-b-indigo-400  h-[100px] object-cover' onClick={()=>setimageIndex(i)} width={200} height={140} alt='slide img' src={img.url}/>
+
         </div>
         )
       }else{
-        return   <Image  key={img.id}  className='w-[200px] rounded-md shadow-md h-[200px] object-fill' onClick={()=>setimageIndex(i)} width={200} height={140} alt='slide img' src={img.url}/>
+        return   <Image  key={img.id}  className='w-[150px] rounded-md shadow-md h-[100px] object-cover my-2' onClick={()=>setimageIndex(i)} width={200} height={140} alt='slide img' src={img.url}/>
       }
     })}
+          </div>
+        </div>
+            <div className=' hidden md:flex items-center gap-2 my-6'>
+<div>
+{imageArr.map((img,i)=>{
+      if(i==imageIndex){
+        return (
+        <div key={img.id} className='py-2'>
+            <Image     className='w-[150px] rounded-md  shadow-xl border-b-2 border-b-indigo-400  h-[100px] object-cover' onClick={()=>setimageIndex(i)} width={200} height={140} alt='slide img' src={img.url}/>
+            
+        </div>
+        )
+      }else{
+        return   <Image  key={img.id}  className='w-[150px] rounded-md shadow-md h-[100px] object-cover my-2' onClick={()=>setimageIndex(i)} width={200} height={140} alt='slide img' src={img.url}/>
+      }
+    })}
+</div>
+
+    <div>
+    <Image className='h-[400px] ease-in duration-300 w-[400px] rounded-lg object-cover shadow-lg' src={imageArr[imageIndex].url} width={1000} height={950} alt='product images'/>
+    </div>
             </div>
+
+
         </div>
         <div className='col-span-2'>
           <h1 className='text-xl font-semibold py-2'> {name}</h1>
